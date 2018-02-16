@@ -1,0 +1,27 @@
+[core]
+	excludesfile = /Users/ougi/.gitignore_global
+	autocrlf = input
+	editor = vim -c \"set fenc=utf-8\"
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[user]
+	name = Katsushi OUGI
+	email = bdbkx286@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[diff]
+	tool = opendiff
+[commit]
+	template = /Users/ougi/.stCommitMsg
+[alias]
+[merge]
+	ff = false
+[pull]
+	ff = only
