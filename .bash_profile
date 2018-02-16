@@ -19,6 +19,8 @@ fi
 alias p="cd ~/Project"
 alias d="cd ~/Desktop"
 alias ls='ls -G'
+alias gst='git status'
+alias gb='git branch'
 
 #bash_completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -28,3 +30,4 @@ fi
 #gitの補完
 source /usr/local/etc/bash_completion.d/git-prompt.sh
 source /usr/local/etc/bash_completion.d/git-completion.bash
+

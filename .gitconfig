@@ -2,12 +2,6 @@
 	excludesfile = /Users/ougi/.gitignore_global
 	autocrlf = input
 	editor = vim -c \"set fenc=utf-8\"
-[difftool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-	trustExitCode = true
 [user]
 	name = Katsushi OUGI
 	email = bdbkx286@gmail.com
@@ -22,6 +16,15 @@
 	template = /Users/ougi/.stCommitMsg
 [alias]
 [merge]
+        tool = p4merge
 	ff = false
+[mergetool]
+        keepBackup = false
+[mergetool "p4merge"]
+        path = p4merge
+        keepTemporaries = false
+        trustExitCode = false
 [pull]
 	ff = only
+[alias]
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
