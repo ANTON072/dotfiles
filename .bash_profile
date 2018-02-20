@@ -19,7 +19,7 @@ fi
 alias p="cd ~/Project"
 alias d="cd ~/Desktop"
 alias ls='ls -G'
-alias gst='git status'
+alias gs='git status'
 alias gb='git branch'
 
 #bash_completion

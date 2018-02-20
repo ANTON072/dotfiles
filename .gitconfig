@@ -3,8 +3,8 @@
 	autocrlf = input
 	editor = vim -c \"set fenc=utf-8\"
 [user]
-	name = Katsushi OUGI
-	email = bdbkx286@gmail.com
+	name = ougi
+	email = ougi@strobe-scope.net
 [color]
 	diff = auto
 	status = auto
@@ -28,3 +28,9 @@
 	ff = only
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
+[difftool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = true
