@@ -84,7 +84,3 @@ zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-fpath=(~/.zsh/completion $fpath)
-
-autoload -U compinit
-compinit -u
