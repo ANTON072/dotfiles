@@ -8,6 +8,7 @@ export LANG=ja_JP.UTF-8
 export PATH=~/bin:$PATH
 export PATH="$HOME/.anyenv/bin:$PATH"
 export RAILS_ENV=development
+export EDITOR='code'
 eval "$(anyenv init -)"
 
 #bash_completion
