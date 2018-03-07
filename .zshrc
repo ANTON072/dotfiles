@@ -1,6 +1,9 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 
+# エディタ
+export EDITOR='code'
+
 # https://github.com/sindresorhus/pure#getting-started
 autoload -U promptinit; promptinit
 prompt pure
@@ -83,4 +86,7 @@ setopt complete_in_word
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+source ~/.bin/tmuxinator.zsh
+
 
