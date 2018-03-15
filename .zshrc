@@ -46,10 +46,6 @@ setopt interactive_comments
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
-#gitの補完
-#source /usr/local/etc/bash_completion.d/git-prompt.sh
-#source /usr/local/etc/bash_completion.d/git-completion.bash
-
 # alias
 alias p="cd ~/Project"
 alias d="cd ~/Desktop"
@@ -89,4 +85,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 source ~/.bin/tmuxinator.zsh
 
-
+# 初回シェル時のみ tmux実行
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
