@@ -1,17 +1,19 @@
 [core]
 	excludesfile = /Users/ougi/.gitignore_global
 	autocrlf = input
-	editor = vim -c \"set fenc=utf-8\"
+	editor = code --wait
 [user]
 	name = ougi
-	email = ougi@strobe-scope.net
+	email = bdbkx286@gmail.com
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = auto
 [diff]
-	tool = opendiff
+	tool = default-difftool 
+[difftool "default-difftool"]
+        cmd = code --wait --diff $LOCAL $REMOTE
 [commit]
 	template = /Users/ougi/.stCommitMsg
 [alias]
@@ -21,24 +23,19 @@
         a = add 
         bindex = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:iso8601)%09%(refname)' refs/heads
 [merge]
-        tool = p4merge
-	ff = false
-[mergetool]
-        keepBackup = false
-[mergetool "p4merge"]
-        path = p4merge
-        keepTemporaries = false
-        trustExitCode = false
+	tool = vscode
 [pull]
 	ff = only
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
 [difftool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	cmd = " /usr/local/bin/code --wait --diff $LOCAL $REMOTE"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	cmd = /usr/local/bin/code --wait $MERGED
 	trustExitCode = true
 [pager]
 	diff = diff-so-fancy | less --tabs=2 -RFX
 	show = diff-so-fancy | less --tabs=2 -RFX
+[mergetool "vscode"]
+	cmd = "code --wait $MERGED"
