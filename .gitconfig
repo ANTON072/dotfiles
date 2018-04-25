@@ -4,38 +4,27 @@
 	editor = code --wait
 [user]
 	name = ougi
-	email = bdbkx286@gmail.com
+	email = ougi@to-r.net
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = auto
 [diff]
-	tool = default-difftool 
+	tool = default-difftool
 [difftool "default-difftool"]
-        cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = atom --wait --diff $LOCAL $REMOTE
 [commit]
 	template = /Users/ougi/.stCommitMsg
 [alias]
-        s = status
-        b = branch
-        co = checkout
-        a = add 
-        bindex = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:iso8601)%09%(refname)' refs/heads
+	s = status
+	b = branch
+	co = checkout
+	a = add
+	bindex = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:iso8601)%09%(refname)' refs/heads
 [merge]
-	tool = vscode
+	tool = atom
 [pull]
 	ff = only
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
-[difftool "sourcetree"]
-	cmd = " /usr/local/bin/code --wait --diff $LOCAL $REMOTE"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/code --wait $MERGED
-	trustExitCode = true
-[pager]
-	diff = diff-so-fancy | less --tabs=2 -RFX
-	show = diff-so-fancy | less --tabs=2 -RFX
-[mergetool "vscode"]
-	cmd = "code --wait $MERGED"

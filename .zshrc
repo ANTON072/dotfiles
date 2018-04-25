@@ -38,10 +38,6 @@ setopt ignore_eof
 # '#'以降をコメントとして扱う
 setopt interactive_comments
 
-# プロンプト
-#PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-#%# "
-
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
@@ -85,3 +81,5 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 source ~/.bin/tmuxinator.zsh
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export ANDROID_HOME=/Users/ougi/Library/Android/sdk
