@@ -1,9 +1,3 @@
-# 環境変数
-export LANG=ja_JP.UTF-8
-
-# エディタ
-export EDITOR='code'
-
 # https://github.com/sindresorhus/pure#getting-started
 autoload -U promptinit; promptinit
 prompt pure
@@ -37,10 +31,6 @@ setopt ignore_eof
 
 # '#'以降をコメントとして扱う
 setopt interactive_comments
-
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
 
 # alias
 alias p="cd ~/Project"
@@ -80,6 +70,3 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 source ~/.bin/tmuxinator.zsh
-
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export ANDROID_HOME=/Users/ougi/Library/Android/sdk
