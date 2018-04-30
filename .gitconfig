@@ -1,7 +1,7 @@
 [core]
 	excludesfile = /Users/ougi/.gitignore_global
 	autocrlf = input
-	editor = code --wait
+	editor = atom --wait
 [user]
 	name = ougi
 	email = ougi@to-r.net
@@ -28,9 +28,3 @@
 	ff = only
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
-[difftool "sourcetree"]
-	cmd = " /usr/local/bin/code --wait --diff $LOCAL $REMOTE"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/code --wait $MERGED
-	trustExitCode = true
