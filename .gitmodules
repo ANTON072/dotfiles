@@ -1,0 +1,3 @@
+[submodule "cd-bookmark"]
+	path = cd-bookmark
+	url = git@github.com:ANTON072/cd-bookmark.git
