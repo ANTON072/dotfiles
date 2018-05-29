@@ -30,8 +30,6 @@ set noerrorbells
 set showmatch matchtime=1
 " ステータス行を常に表示
 set laststatus=2
-" タブ文字を CTRL-I で表示し、行末に $ で表示する
-set list
 " 行末のスペースを可視化
 set listchars=tab:^\ ,trail:~
 " インデント幅

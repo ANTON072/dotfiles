@@ -4,7 +4,7 @@ prompt pure
 
 # 補完機能有効化
 autoload -Uz compinit
-compinit
+compinit -u
 
 # 色使用有効化
 autoload -Uz colors
@@ -64,6 +64,9 @@ setopt auto_menu
 setopt auto_param_keys
 # 語の途中でもカーソル位置で補完
 setopt complete_in_word
+# コマンドの打ち間違いを指摘してくれる
+setopt correct
+SPROMPT="correct: $RED%R$DEFAULT -> $GREEN%r$DEFAULT ? [Yes/No/Abort/Edit] => "
 
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
