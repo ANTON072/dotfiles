@@ -39,6 +39,7 @@ alias ls='ls -G'
 alias gs='git status'
 alias gb='git branch'
 alias grep='grep --color=auto'
+alias cdb='cd-bookmark'
 
 #同時に起動したzshの間でヒストリを共有する
 setopt share_history
@@ -74,3 +75,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 source ~/.bin/tmuxinator.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fpath=(~/dotfiles/cd-bookmark(N-/) $fpath)
+autoload -Uz cd-bookmark
