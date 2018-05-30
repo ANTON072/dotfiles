@@ -2,6 +2,10 @@
 autoload -U promptinit; promptinit
 prompt pure
 
+# ブックマーク
+fpath=(~/dotfiles/cd-bookmark(N-/) $fpath)
+autoload -Uz cd-bookmark
+
 # 補完機能有効化
 autoload -Uz compinit
 compinit -u
@@ -35,11 +39,12 @@ setopt interactive_comments
 # alias
 alias p="cd ~/Project"
 alias d="cd ~/Desktop"
+alias b='cd-bookmark'
 alias ls='ls -G'
 alias gs='git status'
 alias gb='git branch'
 alias grep='grep --color=auto'
-alias cdb='cd-bookmark'
+
 
 #同時に起動したzshの間でヒストリを共有する
 setopt share_history
@@ -75,6 +80,3 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 source ~/.bin/tmuxinator.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-fpath=(~/dotfiles/cd-bookmark(N-/) $fpath)
-autoload -Uz cd-bookmark
