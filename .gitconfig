@@ -1,7 +1,7 @@
 [core]
 	excludesfile = /Users/ougi/.gitignore_global
 	autocrlf = input
-	editor = atom --wait
+	editor = code --wait
 [user]
 	name = Katsushi OUGI
 	email = ougi@to-r.net
@@ -13,7 +13,7 @@
 [diff]
 	tool = default-difftool
 [difftool "default-difftool"]
-  cmd = atom --wait --diff $LOCAL $REMOTE
+  cmd = code --wait --diff $LOCAL $REMOTE
 [commit]
 	template = /Users/ougi/.stCommitMsg
 [alias]
@@ -21,9 +21,14 @@
 	b = branch
 	co = checkout
 	a = add
+	f = flow
+	ff = flow feature
+	fh = flow hotfix
+	fr = flow release
+	t = tag
 	bindex = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:iso8601)%09%(refname)' refs/heads
 [merge]
-	tool = atom
+	tool = code
 [pull]
 	ff = only
 [alias]
