@@ -1,21 +1,15 @@
 [core]
 	excludesfile = /Users/ougi/.gitignore_global
 	autocrlf = input
-	editor = code --wait
+	editor = vim -c "set fenc=utf-8"
 [user]
 	name = ougi
-	email = bdbkx286@gmail.com
+	email = ougi@to-r.net
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = auto
-[diff]
-	tool = default-difftool
-[difftool "default-difftool"]
-  cmd = code --wait --diff $LOCAL $REMOTE
-[commit]
-	template = /Users/ougi/.stCommitMsg
 [alias]
 	s = status
 	b = branch
@@ -27,15 +21,13 @@
 	fr = flow release
 	t = tag
 	bindex = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:iso8601)%09%(refname)' refs/heads
-[merge]
-	tool = code
 [pull]
 	ff = only
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
 [difftool "sourcetree"]
-	cmd = " /usr/local/bin/code --wait --diff $LOCAL $REMOTE"
+	cmd = "opendiff $LOCAL $REMOTE"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/code --wait $MERGED
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh $LOCAL $REMOTE -ancestor $BASE -merge $MERGED
 	trustExitCode = true
