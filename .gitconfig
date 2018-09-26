@@ -3,8 +3,8 @@
 	autocrlf = input
 	editor = code --wait
 [user]
-	name = Katsushi OUGI
-	email = ougi@to-r.net
+	name = ougi
+	email = bdbkx286@gmail.com
 [color]
 	diff = auto
 	status = auto

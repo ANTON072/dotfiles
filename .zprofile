@@ -10,3 +10,5 @@ export ANDROID_HOME=/Users/ougi/Library/Android/sdk
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+
+eval "$(direnv hook zsh)"

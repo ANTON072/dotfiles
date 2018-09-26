@@ -1,5 +1,8 @@
 # https://github.com/sindresorhus/pure#getting-started
 autoload -U promptinit; promptinit
+autoload bashcompinit
+
+bashcompinit
 prompt pure
 
 # ブックマーク
@@ -44,7 +47,7 @@ alias ls='ls -G'
 alias gs='git status'
 alias gb='git branch'
 alias grep='grep --color=auto'
-
+alias server='python -m SimpleHTTPServer 9999'
 
 #同時に起動したzshの間でヒストリを共有する
 setopt share_history
@@ -80,3 +83,18 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 source ~/.bin/tmuxinator.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# パスワード生成
+# pswgen 5
+pswgen() {
+  pwgen -Bs $1 1 |pbcopy |pbpaste; echo "Has been copied to clipboard"
+}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ougi/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ougi/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ougi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ougi/google-cloud-sdk/completion.zsh.inc'; fi
+
+# wp-cliタブ補完
+source ~/.bin/wp-completion.bash
