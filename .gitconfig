@@ -1,10 +1,10 @@
 [core]
 	excludesfile = /Users/ougi/.gitignore_global
 	autocrlf = input
-	editor = vim -c "set fenc=utf-8"
+	editor = vim -c \"set fenc=utf-8\"
 [user]
-	name = ougi
-	email = ougi@to-r.net
+	name = Katsushi OUGI
+	email = bdbkx286@gmail.com
 [color]
 	diff = auto
 	status = auto
@@ -26,8 +26,12 @@
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
 [difftool "sourcetree"]
-	cmd = "opendiff $LOCAL $REMOTE"
+	cmd = " /usr/local/bin/code --wait --diff $LOCAL $REMOTE"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh $LOCAL $REMOTE -ancestor $BASE -merge $MERGED
+	cmd = /usr/local/bin/code --wait $MERGED
 	trustExitCode = true
+[commit]
+	template = /Users/ougi/.stCommitMsg
+[mergetool]
+	keepBackup = false

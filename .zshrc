@@ -5,6 +5,9 @@ autoload bashcompinit
 bashcompinit
 prompt pure
 
+# https://qiita.com/kwgch/items/445a230b3ae9ec246fcb
+setopt nonomatch
+
 # ブックマーク
 fpath=(~/dotfiles/cd-bookmark(N-/) $fpath)
 autoload -Uz cd-bookmark
@@ -87,7 +90,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # パスワード生成
 # pswgen 5
 pswgen() {
-  pwgen -Bs $1 1 |pbcopy |pbpaste; echo "Has been copied to clipboard"
+  pwgen -sy $1 1 |pbcopy |pbpaste; echo "Has been copied to clipboard"
 }
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -98,3 +101,9 @@ if [ -f '/Users/ougi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users
 
 # wp-cliタブ補完
 source ~/.bin/wp-completion.bash
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# シェルの再起動
+alias relogin='exec $SHELL -l'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

@@ -16,3 +16,7 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
 eval "$(direnv hook zsh)"
+export PGDATA='/usr/local/var/postgres'
+
+alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
+
