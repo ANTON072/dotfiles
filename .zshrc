@@ -83,7 +83,6 @@ zstyle ':completion:*' use-cache true
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-source ~/.bin/tmuxinator.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # パスワード生成
@@ -105,7 +104,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 # シェルの再起動
 alias relogin='exec $SHELL -l'
 
-
 # ctrl + r で履歴検索
 function peco-select-history() {
     # historyを番号なし、逆順、最初から表示。
@@ -118,8 +116,6 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^R' peco-select-history
-
-
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
