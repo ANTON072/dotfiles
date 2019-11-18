@@ -100,6 +100,13 @@ if [ -f '/Users/ougi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users
 # シェルの再起動
 alias relogin='exec $SHELL -l'
 
+# Dockerの削除コマンド
+alias dc_build_up='docker-compose rm -fv && docker-compose build && docker-compose up'
+alias rm_docker_images='docker images -qf dangling=true | xargs docker rmi'
+alias rm_docker_containers='docker ps -aqf status=exited | xargs docker rm -v' # rm with volumes
+alias rm_docker_volumes='docker volume ls -qf dangling=true | xargs docker volume rm'
+alias rm_docker_compose_containers='docker-compose rm -fv'
+
 # ctrl + r で履歴検索
 function peco-select-history() {
     # historyを番号なし、逆順、最初から表示。
