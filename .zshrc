@@ -46,13 +46,12 @@ setopt interactive_comments
 alias p="cd ~/Project"
 alias d="cd ~/Desktop"
 alias b='cd-bookmark'
-alias ls='ls -G'
-alias gs='git status'
-alias gb='git branch'
-alias grep='grep --color=auto'
+alias ls='ls -l'
 alias server='python -m SimpleHTTPServer 9999'
+alias g='cd /Volumes/GoogleDrive/マイドライブ'
+alias fc='cd "$(find . -type d | peco)"'
 
-#同時に起動したzshの間でヒストリを共有する
+# 同時に起動したzshの間でヒストリを共有する
 setopt share_history
 
 # 同じコマンドをヒストリに残さない
@@ -106,4 +105,24 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 # シェルの再起動
 alias relogin='exec $SHELL -l'
 
+
+# ctrl + r で履歴検索
+function peco-select-history() {
+    # historyを番号なし、逆順、最初から表示。
+    # 順番を保持して重複を削除。
+    # カーソルの左側の文字列をクエリにしてpecoを起動
+    # \nを改行に変換
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+    CURSOR=$#BUFFER             # カーソルを文末に移動
+    zle -R -c                   # refresh
+}
+zle -N peco-select-history
+bindkey '^R' peco-select-history
+
+
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+eval "$(direnv hook bash)"
+
+export PATH="/usr/local/opt/curl/bin:$PATH"

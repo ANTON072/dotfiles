@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # エディタ
-export EDITOR='vim'
+export EDITOR='code'
 
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # Android Studio
