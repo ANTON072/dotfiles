@@ -97,10 +97,6 @@ if [ -f '/Users/ougi/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ougi/
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ougi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ougi/google-cloud-sdk/completion.zsh.inc'; fi
 
-# wp-cliタブ補完
-source ~/.bin/wp-completion.bash
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-
 # シェルの再起動
 alias relogin='exec $SHELL -l'
 
