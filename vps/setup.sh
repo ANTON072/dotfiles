@@ -423,9 +423,30 @@ configure_ssh_security() {
     fi
   fi
   
-  # SSH設定の再起動
+  # SSH設定の再起動（Ubuntu 22.04以降のsocket activation対応）
   log_info "SSH設定を反映しています..."
+  
+  # Ubuntu 22.04以降はssh.socketを使用している場合があるため対応
+  if systemctl is-enabled ssh.socket &>/dev/null; then
+    log_info "ssh.socketが有効です。無効化してssh.serviceを使用します..."
+    sudo systemctl disable --now ssh.socket
+    sudo systemctl enable ssh.service
+  fi
+  
+  # SSHサービスを再起動
   sudo systemctl restart ssh
+  
+  # ポート変更が反映されているか確認
+  if [ "$SSH_PORT" != "22" ]; then
+    sleep 2  # サービス起動を待つ
+    if sudo ss -tlnp | grep -q ":$SSH_PORT"; then
+      log_info "SSHは正常にポート $SSH_PORT で起動しています"
+    else
+      log_error "警告: SSHがポート $SSH_PORT で起動していない可能性があります"
+      log_warn "手動で確認してください: sudo systemctl status ssh"
+    fi
+  fi
+  
   log_info "SSH設定の強化が完了しました"
 }
 
