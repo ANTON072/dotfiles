@@ -177,29 +177,3 @@ sudo tail -f /var/log/auth.log
 ```sh
 ssh -i [秘密鍵] [ユーザー名]@[サーバーIP] -p [ポート番号]
 ```
-
-## 🧪 ローカル環境でのテスト（Docker Compose）
-
-本番環境で実行する前に、Docker を使ってローカルでテストすることができます。
-
-```sh
-cd test
-chmod +x test.sh  # 実行権限を付与
-
-# コンテナを起動してすぐに接続
-./test.sh run
-
-# コンテナ内でスクリプトを実行
-sudo bash /home/ubuntu/setup.sh
-```
-
-### 📝 利用可能なコマンド
-
-| コマンド          | 説明                               |
-| ----------------- | ---------------------------------- |
-| `./test.sh build` | Docker イメージをビルド            |
-| `./test.sh run`   | コンテナを起動して接続             |
-| `./test.sh exec`  | 実行中のコンテナに再接続           |
-| `./test.sh test`  | 自動テスト（構文チェック等）を実行 |
-| `./test.sh clean` | コンテナとイメージを削除           |
-| `./test.sh help`  | ヘルプを表示                       |
